@@ -49,10 +49,15 @@ function Home() {
                     </div>
                     <div><span>10:9AM, Wed, Apr 6, 2022</span></div>
                     <br />
-                    <div><img style={{ width: '80px' }} src={sun} alt='' />
-                        <span><b
+                    <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        marginLeft: '70px'
+                    }}><img style={{ width: '80px' }} src={sun} alt='' />
+                        <h2><b
                             style={{ fontSize: '30px', marginLeft: '20px' }}
-                        >3°C</b></span>
+                        >3</b><span
+                            style={{ fontSize: '15px', position: 'relative', top: '-10px' }}>°C</span></h2>
                     </div>
                     <br />
                     <div>
