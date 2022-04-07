@@ -26,13 +26,13 @@ function Home() {
                         <a href='today'>Today</a>
                     </li>
                     <li>
-                        <a href='today'>Hourly</a>
+                        <a href='hourly'>Hourly</a>
                     </li>
                     <li>
-                        <a href='today'>10 days</a>
+                        <a href='10days'>10 days</a>
                     </li>
                     <li>
-                        <a href='today'>Monthly</a>
+                        <a href='monthly'>Monthly</a>
                     </li>
                 </ul>
             </div>
@@ -78,42 +78,42 @@ function Home() {
                         <div><h1>Chỗ này biểu đồ</h1></div>
                     </div>
                     <div className='views-right-bottom'>
-                        <div>
+                        <div className='views-details active'>
                             <h3 style={{ marginLeft: '15px' }}>Today</h3>
                             <img style={{ width: '80px' }} src={sun} alt='' />
-                            <div className='humidity'>
+                            <div className='humidity2'>
                                 <h3 style={{ marginLeft: '5px' }}>Humidity</h3>
                                 <div style={{ marginLeft: '10px' }}>43%</div>
                             </div>
                         </div>
-                        <div>
+                        <div className='views-details'>
                             <h3 style={{ marginLeft: '15px' }}>Apr 07</h3>
                             <img style={{ width: '80px' }} src={sun} alt='' />
-                            <div className='humidity'>
+                            <div className='humidity2'>
                                 <h3 style={{ marginLeft: '5px' }}>Humidity</h3>
                                 <div style={{ marginLeft: '10px' }}>31%</div>
                             </div>
                         </div>
-                        <div>
+                        <div className='views-details'>
                             <h3 style={{ marginLeft: '15px' }}>Apr 08</h3>
                             <img style={{ width: '80px' }} src={cloud} alt='' />
-                            <div className='humidity'>
+                            <div className='humidity2'>
                                 <h3 style={{ marginLeft: '5px' }}>Humidity</h3>
                                 <div style={{ marginLeft: '10px' }}>38%</div>
                             </div>
                         </div>
-                        <div>
+                        <div className='views-details'>
                             <h3 style={{ marginLeft: '15px' }}>Apr 09</h3>
                             <img style={{ width: '80px' }} src={cloud} alt='' />
-                            <div className='humidity'>
+                            <div className='humidity2'>
                                 <h3 style={{ marginLeft: '5px' }}>Humidity</h3>
                                 <div style={{ marginLeft: '10px' }}>21%</div>
                             </div>
                         </div>
-                        <div>
+                        <div className='views-details'>
                             <h3 style={{ marginLeft: '15px' }}>Apr 10</h3>
                             <img style={{ width: '80px' }} src={sun} alt='' />
-                            <div className='humidity'>
+                            <div className='humidity2'>
                                 <h3 style={{ marginLeft: '5px' }}>Humidity</h3>
                                 <div style={{ marginLeft: '10px' }}>43%</div>
                             </div>

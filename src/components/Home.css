@@ -24,6 +24,15 @@ input{
     padding  : 5px 8px;
     border   : none;
 }
+
+.selected{
+    width: 900px;
+    height: 50px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
 ul{
     list-style: none;
     padding: 0; 
@@ -36,23 +45,14 @@ li {
     float: left;
     padding: 0 20px;
 }
-
 li a {
     display: flex;
     color: black;
 }
-
 li a:hover {
     border-bottom: 1px solid red;
 }
-.selected{
-    width: 900px;
-    height: 50px;
-    background: white;
-    margin: 0 auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
+
 .views{
     padding: 15px;
     background: white;
@@ -97,11 +97,23 @@ li a:hover {
     align-items: center;
     justify-content: space-around;
     margin-top: 80px;
-    margin-left: 50px
+}
+.views-details{
+    cursor: pointer;
+}
+.active{
+    background-color: dodgerblue;
+    border-radius: 5px;
+    padding: 0 20px;
 }
 .anticon-close{
     float: right;
     margin-bottom: 100px;
+}
+.humidity2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
