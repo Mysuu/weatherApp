@@ -82,40 +82,40 @@ function Home() {
                             <h3 style={{ marginLeft: '15px' }}>Today</h3>
                             <img style={{ width: '80px' }} src={sun} alt='' />
                             <div className='humidity2'>
-                                <h3 style={{ marginLeft: '5px' }}>Humidity</h3>
-                                <div style={{ marginLeft: '10px' }}>43%</div>
+                                <h3>Humidity</h3>
+                                <div>43%</div>
                             </div>
                         </div>
                         <div className='views-details'>
                             <h3 style={{ marginLeft: '15px' }}>Apr 07</h3>
                             <img style={{ width: '80px' }} src={sun} alt='' />
                             <div className='humidity2'>
-                                <h3 style={{ marginLeft: '5px' }}>Humidity</h3>
-                                <div style={{ marginLeft: '10px' }}>31%</div>
+                                <h3>Humidity</h3>
+                                <div>31%</div>
                             </div>
                         </div>
                         <div className='views-details'>
                             <h3 style={{ marginLeft: '15px' }}>Apr 08</h3>
                             <img style={{ width: '80px' }} src={cloud} alt='' />
                             <div className='humidity2'>
-                                <h3 style={{ marginLeft: '5px' }}>Humidity</h3>
-                                <div style={{ marginLeft: '10px' }}>38%</div>
+                                <h3>Humidity</h3>
+                                <div>38%</div>
                             </div>
                         </div>
                         <div className='views-details'>
                             <h3 style={{ marginLeft: '15px' }}>Apr 09</h3>
                             <img style={{ width: '80px' }} src={cloud} alt='' />
                             <div className='humidity2'>
-                                <h3 style={{ marginLeft: '5px' }}>Humidity</h3>
-                                <div style={{ marginLeft: '10px' }}>21%</div>
+                                <h3>Humidity</h3>
+                                <div>21%</div>
                             </div>
                         </div>
                         <div className='views-details'>
                             <h3 style={{ marginLeft: '15px' }}>Apr 10</h3>
                             <img style={{ width: '80px' }} src={sun} alt='' />
                             <div className='humidity2'>
-                                <h3 style={{ marginLeft: '5px' }}>Humidity</h3>
-                                <div style={{ marginLeft: '10px' }}>43%</div>
+                                <h3>Humidity</h3>
+                                <div>43%</div>
                             </div>
                         </div>
                     </div>
