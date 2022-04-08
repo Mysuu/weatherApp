@@ -1,22 +1,4 @@
 .container {
-    width: 900px;
-    height: 450px;
-    margin: 0 auto;
-
-    .input-search {
-        width: 100px;
-        margin-bottom: 15px;
-        display: flex;
-        align-items: center;
-
-        input {
-            border-radius: 5px;
-            outline  : none;
-            min-width: 300px;
-            padding  : 5px 8px;
-            border   : none;
-        }
-    }
 
     .selected {
         width: 900px;
@@ -90,6 +72,10 @@
             align-items: center;
             margin-left: 70px;
             margin-top: 10px;
+
+            h1{
+                font-size: 27px;
+            }
 
             .ant-switch-checked, .ant-switch {
                 margin-bottom: 10px;
