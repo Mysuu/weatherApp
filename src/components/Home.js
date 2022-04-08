@@ -1,4 +1,4 @@
-import './Home.css'
+import './Home.scss'
 import { Input, Switch } from 'antd';
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons'
 import sun from '../img/sun.png'
@@ -41,22 +41,15 @@ function Home() {
                     <div className='views-left-top'>
                         <h1>Hà Nội</h1>
                         <Switch defaultChecked onChange={onChange} />
-                        <span style={{ marginBottom: '20px' }}>°C</span>
+                        <span>°C</span>
                     </div>
                     <div><span>10:9AM, Wed, Apr 6, 2022</span></div>
                     <br />
-                    <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        marginLeft: '70px'
-                    }}>
-                        <img style={{ width: '80px' }} src={sun} alt='' />
+                    <div className='views-left-weather'>
+                        <img src={sun} alt='' />
                         <h2>
-                            <b
-                                style={{ fontSize: '30px', marginLeft: '20px' }}
-                            >3
-                            </b>
-                            <span style={{ fontSize: '15px', position: 'relative', top: '-10px' }}>°C</span>
+                            <b>3</b>
+                            <span>°C</span>
                         </h2>
                     </div>
                     <br />
@@ -84,40 +77,40 @@ function Home() {
                     </div>
                     <div className='views-right-bottom'>
                         <div className='views-details active'>
-                            <h3 style={{ marginLeft: '15px' }}>Today</h3>
-                            <img style={{ width: '80px' }} src={sun} alt='' />
+                            <h3>Today</h3>
+                            <img src={sun} alt='' />
                             <div className='humidity2'>
                                 <h3>Humidity</h3>
                                 <div>43%</div>
                             </div>
                         </div>
                         <div className='views-details'>
-                            <h3 style={{ marginLeft: '15px' }}>Apr 07</h3>
-                            <img style={{ width: '80px' }} src={sun} alt='' />
+                            <h3>Apr 07</h3>
+                            <img src={sun} alt='' />
                             <div className='humidity2'>
                                 <h3>Humidity</h3>
                                 <div>31%</div>
                             </div>
                         </div>
                         <div className='views-details'>
-                            <h3 style={{ marginLeft: '15px' }}>Apr 08</h3>
-                            <img style={{ width: '80px' }} src={cloud} alt='' />
+                            <h3>Apr 08</h3>
+                            <img src={cloud} alt='' />
                             <div className='humidity2'>
                                 <h3>Humidity</h3>
                                 <div>38%</div>
                             </div>
                         </div>
                         <div className='views-details'>
-                            <h3 style={{ marginLeft: '15px' }}>Apr 09</h3>
-                            <img style={{ width: '80px' }} src={cloud} alt='' />
+                            <h3>Apr 09</h3>
+                            <img src={cloud} alt='' />
                             <div className='humidity2'>
                                 <h3>Humidity</h3>
                                 <div>21%</div>
                             </div>
                         </div>
                         <div className='views-details'>
-                            <h3 style={{ marginLeft: '15px' }}>Apr 10</h3>
-                            <img style={{ width: '80px' }} src={sun} alt='' />
+                            <h3>Apr 10</h3>
+                            <img src={sun} alt='' />
                             <div className='humidity2'>
                                 <h3>Humidity</h3>
                                 <div>43%</div>
