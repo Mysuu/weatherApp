@@ -12,9 +12,8 @@ function Home() {
         console.log(`switch to ${checked}`);
     }
 
-    const onSearch = () => {
+    const onSearch = () => { }
 
-    }
     return (
         <div className="container">
             <div className='input-search'>
@@ -37,12 +36,9 @@ function Home() {
                 </ul>
             </div>
             <div className="views">
-
                 <div className='views-left'>
                     <MenuOutlined style={{ color: '#1890ff' }} />
-
                     <div className='views-left-top'>
-
                         <h1>Hà Nội</h1>
                         <Switch defaultChecked onChange={onChange} />
                         <span style={{ marginBottom: '20px' }}>°C</span>
@@ -53,11 +49,15 @@ function Home() {
                         display: 'flex',
                         alignItems: 'center',
                         marginLeft: '70px'
-                    }}><img style={{ width: '80px' }} src={sun} alt='' />
-                        <h2><b
-                            style={{ fontSize: '30px', marginLeft: '20px' }}
-                        >3</b><span
-                            style={{ fontSize: '15px', position: 'relative', top: '-10px' }}>°C</span></h2>
+                    }}>
+                        <img style={{ width: '80px' }} src={sun} alt='' />
+                        <h2>
+                            <b
+                                style={{ fontSize: '30px', marginLeft: '20px' }}
+                            >3
+                            </b>
+                            <span style={{ fontSize: '15px', position: 'relative', top: '-10px' }}>°C</span>
+                        </h2>
                     </div>
                     <br />
                     <div>
