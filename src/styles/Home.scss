@@ -26,9 +26,11 @@
             display: flex;
             color: black;
         }
-        
-        li a:hover {
-            border-bottom: 1px solid red;
+
+        .activeClassName {
+            color:deepskyblue;
+            border-bottom: 2px solid rgb(196, 17, 196);
+            padding: 10px;
         }
     }
 }

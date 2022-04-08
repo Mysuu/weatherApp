@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Switch } from "antd";
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
+import { NavLink } from "react-router-dom";
 import "../styles/Home.scss";
 import sun from "../img/sun.png";
 import cloud from "../img/cloud.png";
@@ -28,16 +29,23 @@ function Home() {
         <div className="selected">
           <ul>
             <li activeclassname="active">
-              <a href="today">Today</a>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "activeClassName" : undefined
+                }
+              >
+                Today
+              </NavLink>
             </li>
             <li>
-              <a href="hourly">Hourly</a>
+              <NavLink to="/hourly">Hourly</NavLink>
             </li>
             <li>
-              <a href="10days">10 days</a>
+              <NavLink to="/10days">10 days</NavLink>
             </li>
             <li>
-              <a href="monthly">Monthly</a>
+              <NavLink to="/monthly">Monthly</NavLink>
             </li>
           </ul>
         </div>
