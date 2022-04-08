@@ -1,6 +1,6 @@
 import React from "react";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
-import "./SearchCity.scss";
+import "../styles/SearchCity.scss";
 
 function SearchCity({ valueCity, setUpdateCity }) {
   const handleOnSelect = (e) => {

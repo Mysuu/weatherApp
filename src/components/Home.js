@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Switch } from "antd";
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
-import "./Home.scss";
+import "../styles/Home.scss";
 import sun from "../img/sun.png";
 import cloud from "../img/cloud.png";
 import SearchCity from "./SearchCity";
