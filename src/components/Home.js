@@ -6,16 +6,9 @@ import "../styles/Home.scss";
 import sun from "../img/sun.png";
 import cloud from "../img/cloud.png";
 import SearchCity from "./SearchCity";
+import { ListCity } from "../utils/constant";
 
 function Home() {
-  const [valueCity] = useState([
-    { id: "0", name: "Hà Nội" },
-    { id: "1", name: "Hồ Chí Minh" },
-    { id: "2", name: "Đà Nẵng" },
-    { id: "3", name: "Hà Nam" },
-    { id: "4", name: "Cần Thơ" },
-  ]);
-
   const [updateCity, setUpdateCity] = useState("");
 
   function onChange(checked) {
@@ -24,7 +17,7 @@ function Home() {
 
   return (
     <>
-      <SearchCity valueCity={valueCity} setUpdateCity={setUpdateCity} />
+      <SearchCity valueCity={ListCity} setUpdateCity={setUpdateCity} />
       <div className="container">
         <div className="selected">
           <ul>
