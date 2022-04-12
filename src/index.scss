@@ -5,4 +5,8 @@ body {
 
 .App {
     padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    margin: 0 auto;
 }
