@@ -1,5 +1,9 @@
 .input-search {
   width: 300px;
   margin-bottom: 15px;
-  // margin-left: 235px;
+
+  .ant-select-show-search {
+    width: 300px;
+    position: unset
+  }
 }

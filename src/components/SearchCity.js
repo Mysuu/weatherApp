@@ -1,23 +1,35 @@
 import React from "react";
-import { ReactSearchAutocomplete } from "react-search-autocomplete";
+import { Select } from "antd";
 import "../styles/SearchCity.scss";
+import { ListCity } from "../utils/constant";
 
-function SearchCity({ valueCity, setUpdateCity }) {
-  // const handleOnSelect = (e) => {
-  //   setUpdateCity(e.name);
+const { Option } = Select;
+
+function SearchCity({ setUpdateCity }) {
+  // const [isShowSuggestion, setIsShowSuggestion] = useState("");
+
+  // const onFocus = (e) => {
+  //   const showCity = ListCity.map((item) => {
+  //     return item.name;
+  //   });
+  //   setIsShowSuggestion(true);
   // };
 
   return (
     <div className="input-search">
-      <ReactSearchAutocomplete
-        items={valueCity}
-        onSelect={(e) => setUpdateCity(e.name)}
-        styling={{
-          zIndex: 4,
-          height: "40px",
-        }}
-        autoFocus
-      />
+      <Select
+        showSearch
+        placeholder="Search..."
+        optionFilterProp="children"
+        filterOption={(input, option) =>
+          option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+        }
+        onSelect={(e) => setUpdateCity(ListCity[e].name)}
+      >
+        {ListCity.map((i, index) => {
+          return <Option key={index}>{i.name}</Option>;
+        })}
+      </Select>
     </div>
   );
 }

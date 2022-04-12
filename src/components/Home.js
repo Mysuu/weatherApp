@@ -6,7 +6,7 @@ import "../styles/Home.scss";
 import sun from "../img/sun.png";
 import cloud from "../img/cloud.png";
 import SearchCity from "./SearchCity";
-import { ListCity } from "../utils/constant";
+// import { ListCity } from "../utils/constant";
 
 function Home() {
   const [updateCity, setUpdateCity] = useState("");
@@ -17,11 +17,11 @@ function Home() {
 
   return (
     <>
-      <SearchCity valueCity={ListCity} setUpdateCity={setUpdateCity} />
+      <SearchCity setUpdateCity={setUpdateCity} />
       <div className="container">
         <div className="selected">
           <ul>
-            <li activeclassname="active">
+            <li>
               <NavLink
                 to="/"
                 className={({ isActive }) =>
