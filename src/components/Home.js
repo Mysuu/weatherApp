@@ -46,9 +46,13 @@ function Home() {
           <div className="views-left">
             <MenuOutlined style={{ color: "#1890ff" }} />
             <div className="views-left-top">
-              <h1>{updateCity ? updateCity : "Hà Nội"}</h1>
-              <Switch defaultChecked onChange={onChange} />
-              <span>°C</span>
+              <div>
+                <h1>{updateCity ? updateCity : "Hà Nội"}</h1>
+              </div>
+              <div>
+                <Switch defaultChecked onChange={onChange} />
+                <span>°C</span>
+              </div>
             </div>
             <div>
               <span>10:9AM, Wed, Apr 6, 2022</span>
