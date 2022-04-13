@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Switch } from "antd";
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { NavLink } from "react-router-dom";
@@ -6,18 +6,29 @@ import "../styles/Home.scss";
 import sun from "../img/sun.png";
 import cloud from "../img/cloud.png";
 import SearchCity from "./SearchCity";
-// import { ListCity } from "../utils/constant";
+import { useDispatch, useSelector } from "react-redux";
+import { getWeatherFetch } from "../redux/actions";
 
 function Home() {
-  const [updateCity, setUpdateCity] = useState("");
+  const [nameCity, setNameCity] = useState("ha noi");
+  const [updateCity, setUpdateCity] = useState("Hà Nội");
+
+  const dispatch = useDispatch();
+  const weathers = useSelector((state) => state.myFirstReducer.weathers);
+
+  console.log(weathers);
 
   function onChange(checked) {
     console.log(`switch to ${checked}`);
   }
 
+  useEffect(() => {
+    dispatch(getWeatherFetch(nameCity));
+  }, [dispatch, nameCity]);
+
   return (
     <>
-      <SearchCity setUpdateCity={setUpdateCity} />
+      <SearchCity setNameCity={setNameCity} setUpdateCity={setUpdateCity} />
       <div className="container">
         <div className="selected">
           <ul>
@@ -47,7 +58,7 @@ function Home() {
             <MenuOutlined style={{ color: "#1890ff" }} />
             <div className="views-left-top">
               <div>
-                <h1>{updateCity ? updateCity : "Hà Nội"}</h1>
+                <h1>{updateCity}</h1>
               </div>
               <div>
                 <Switch defaultChecked onChange={onChange} />
@@ -59,26 +70,29 @@ function Home() {
             </div>
             <br />
             <div className="views-left-weather">
-              <img src={sun} alt="" />
+              <img
+                src={`http://openweathermap.org/img/wn/${weathers.list[0].weather[0].icon}@2x.png`}
+                alt=""
+              />
               <h2>
-                <b>3</b>
+                <b>{weathers.list[0].main.temp}</b>
                 <span>°C</span>
               </h2>
             </div>
             <br />
             <div>
               <h1>
-                <b>Clear Sky</b>
+                <b>{weathers.list[0].weather[0].description}</b>
               </h1>
             </div>
             <div className="infoweather">
               <div className="humidity">
                 <h3>Humidity</h3>
-                <div>43%</div>
+                <div>{weathers.list[0].main.humidity}%</div>
               </div>
               <div>
                 <h3>Wind speed</h3>
-                <div>6.08km/j</div>
+                <div>{weathers.list[0].wind.speed}km/j</div>
               </div>
             </div>
           </div>

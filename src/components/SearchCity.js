@@ -2,18 +2,18 @@ import React from "react";
 import { Select } from "antd";
 import "../styles/SearchCity.scss";
 import { ListCity } from "../utils/constant";
+import { useDispatch } from "react-redux";
+import { getWeatherFetch } from "../redux/actions";
 
 const { Option } = Select;
 
-function SearchCity({ setUpdateCity }) {
-  // const [isShowSuggestion, setIsShowSuggestion] = useState("");
+function SearchCity({ setNameCity, setUpdateCity }) {
+  const dispatch = useDispatch();
 
-  // const onFocus = (e) => {
-  //   const showCity = ListCity.map((item) => {
-  //     return item.name;
-  //   });
-  //   setIsShowSuggestion(true);
-  // };
+  const onSelect = (e) => {
+    setNameCity(ListCity[e].cityName);
+    setUpdateCity(ListCity[e].name);
+  };
 
   return (
     <div className="input-search">
@@ -24,7 +24,7 @@ function SearchCity({ setUpdateCity }) {
         filterOption={(input, option) =>
           option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
         }
-        onSelect={(e) => setUpdateCity(ListCity[e].name)}
+        onSelect={(e) => onSelect(e)}
       >
         {ListCity.map((i, index) => {
           return <Option key={index}>{i.name}</Option>;
