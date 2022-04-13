@@ -23,7 +23,7 @@ function Home() {
   }
 
   useEffect(() => {
-    dispatch(getWeatherFetch(nameCity));
+    dispatch(getWeatherFetch(nameCity)); //data api
   }, [dispatch, nameCity]);
 
   return (
@@ -71,28 +71,30 @@ function Home() {
             <br />
             <div className="views-left-weather">
               <img
-                src={`http://openweathermap.org/img/wn/${weathers.list[0].weather[0].icon}@2x.png`}
+                // src={`http://openweathermap.org/img/wn/${weathers.list[0].weather[0].icon}@2x.png`}
                 alt=""
               />
               <h2>
-                <b>{weathers.list[0].main.temp}</b>
+                {/* <b>{weathers.list[0].main.temp}</b> */}
                 <span>°C</span>
               </h2>
             </div>
             <br />
             <div>
               <h1>
-                <b>{weathers.list[0].weather[0].description}</b>
+                <b style={{ textTransform: "capitalize" }}>
+                  {/* {weathers.list[0].weather[0].description} */}
+                </b>
               </h1>
             </div>
             <div className="infoweather">
               <div className="humidity">
                 <h3>Humidity</h3>
-                <div>{weathers.list[0].main.humidity}%</div>
+                {/* <div>{weathers.list[0].main.humidity}%</div> */}
               </div>
               <div>
                 <h3>Wind speed</h3>
-                <div>{weathers.list[0].wind.speed}km/j</div>
+                {/* <div>{weathers.list[0].wind.speed}km/j</div> */}
               </div>
             </div>
           </div>

@@ -2,17 +2,13 @@ import React from "react";
 import { Select } from "antd";
 import "../styles/SearchCity.scss";
 import { ListCity } from "../utils/constant";
-import { useDispatch } from "react-redux";
-import { getWeatherFetch } from "../redux/actions";
 
 const { Option } = Select;
 
 function SearchCity({ setNameCity, setUpdateCity }) {
-  const dispatch = useDispatch();
-
   const onSelect = (e) => {
-    setNameCity(ListCity[e].cityName);
-    setUpdateCity(ListCity[e].name);
+    setNameCity(ListCity[e].cityName); //show data api mới theo tên đc chọn
+    setUpdateCity(ListCity[e].name); //cập nhật thành phố chọn
   };
 
   return (
