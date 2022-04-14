@@ -7,7 +7,7 @@ const initState = {
 const myFirstReducer = (state = initState, action) => {
   switch (action.type) {
     case GET_WEATHER_SUCCESS:
-      return { ...state, weathers: action.weathers };
+      return { ...state, weathers: action.newData };
     default:
       return state;
   }
