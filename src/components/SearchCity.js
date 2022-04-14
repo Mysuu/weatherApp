@@ -5,15 +5,7 @@ import { ListCity } from "../utils/constant";
 
 const { Option } = Select;
 
-function SearchCity({
-  setNameCity,
-  setUpdateCity,
-  setHumidity,
-  setWindspeed,
-  setDescription,
-  setImage,
-  setTime,
-}) {
+function SearchCity({ setNameCity, setUpdateCity }) {
   const onSelect = (e) => {
     setNameCity(ListCity[e].cityName); //show data api mới theo tên đc chọn
     setUpdateCity(ListCity[e].name); //cập nhật thành phố chọn

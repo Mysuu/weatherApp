@@ -10,12 +10,9 @@ import ViewWeatherLeft from "./ViewWeatherLeft";
 function Home() {
   const [nameCity, setNameCity] = useState("ha noi");
   const [updateCity, setUpdateCity] = useState("Hà Nội");
-  const [humidity, setHumidity] = useState("");
-  const [windspeed, setWindspeed] = useState("");
-  const [image, setImage] = useState("");
-  const [description, setDescription] = useState("");
-  const [time, setTime] = useState("");
+  const [active, setActive] = useState(0);
 
+  console.log("active", active);
   const dispatch = useDispatch();
   const weathers = useSelector((state) => state.myFirstReducer.weathers);
 
@@ -31,19 +28,12 @@ function Home() {
         <div className="views">
           <ViewWeatherLeft
             updateCity={updateCity}
-            humidity={humidity}
-            windspeed={windspeed}
-            image={image}
-            description={description}
-            time={time}
+            active={active}
             weathers={weathers.data}
           />
           <ViewWeatherRight
-            setDescription={setDescription}
-            setHumidity={setHumidity}
-            setImage={setImage}
-            setTime={setTime}
-            setWindspeed={setWindspeed}
+            active={active}
+            setActive={setActive}
             weathers={weathers.data}
           />
         </div>

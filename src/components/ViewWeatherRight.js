@@ -1,25 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { CloseOutlined } from "@ant-design/icons";
 import moment from "moment";
 
-function ViewWeather({
-  setHumidity,
-  setDescription,
-  setImage,
-  setWindspeed,
-  setTime,
-  weathers,
-}) {
-  const [active, setActive] = useState(0);
-  const handleShow = (item) => {
-    console.log(item);
-    setHumidity(item.main.humidity);
-    setWindspeed(item.wind.speed);
-    setDescription(item.weather[0].description);
-    setImage(item.weather[0].icon);
-    setTime(moment(item.dt_txt).format("llll"));
-  };
-
+function ViewWeather({ weathers, active, setActive }) {
   return (
     <div className="views-right">
       <CloseOutlined style={{ color: "#1890ff" }} />
@@ -37,7 +20,6 @@ function ViewWeather({
                 key={index}
                 className={`views-details ${active === index && "active"}`}
                 onClick={() => {
-                  handleShow(item);
                   setActive(index);
                 }}
               >
