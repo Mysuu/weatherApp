@@ -26,9 +26,8 @@ function ViewWeatherLeft({ updateCity, weathers, active }) {
       </div>
       <div>
         <span>
+          <Clock format={"h:mm A"} ticking={true} />, &nbsp;
           {weathers && moment(weathers[active].dt_txt).format("MMMM Do YYYY")}
-          &nbsp;
-          <Clock format={"h:mm A"} />
         </span>
       </div>
       <div className="views-left-weather">
