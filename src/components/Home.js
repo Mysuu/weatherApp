@@ -12,9 +12,10 @@ function Home() {
   const [updateCity, setUpdateCity] = useState("Hà Nội");
   const [active, setActive] = useState(0);
 
-  console.log("active", active);
   const dispatch = useDispatch();
   const weathers = useSelector((state) => state.myFirstReducer.weathers);
+
+  console.log(weathers);
 
   useEffect(() => {
     dispatch(getWeatherFetch(nameCity)); //data api, bắt đầu dispatch tìm cái hàm getWeatherFetch tromg actions

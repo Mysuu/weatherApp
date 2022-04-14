@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { MenuOutlined } from "@ant-design/icons";
 import { Switch } from "antd";
 import moment from "moment";
+import "../styles/ViewWeatherLeft.scss";
 
 function ViewWeatherLeft({ updateCity, weathers, active }) {
-  function onChange(checked) {
-    console.log(`switch to ${checked}`);
-  }
+  const [toggle, setToggle] = useState(false);
+
+  const handleChangWeather = () => {
+    toggle ? setToggle(false) : setToggle(true);
+  };
 
   return (
     <div className="views-left">
@@ -16,8 +19,8 @@ function ViewWeatherLeft({ updateCity, weathers, active }) {
           <h1>{updateCity}</h1>
         </div>
         <div>
-          <Switch defaultChecked onChange={onChange} />
-          <span>°C</span>
+          <Switch defaultChecked onClick={handleChangWeather} />
+          {toggle ? <span>°F</span> : <span>°C</span>}
         </div>
       </div>
       <div>
@@ -34,8 +37,12 @@ function ViewWeatherLeft({ updateCity, weathers, active }) {
           alt=""
         />
         <h2>
-          <b>{weathers && Math.round(weathers[active].main.temp)}</b>
-          <span>°C</span>
+          <b>
+            {toggle
+              ? weathers && Math.round(weathers[active].main.temp * 1.8) + 32
+              : weathers && Math.round(weathers[active].main.temp)}
+          </b>
+          {toggle ? <span>°F</span> : <span>°C</span>}
         </h2>
       </div>
       <br />

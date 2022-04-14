@@ -1,6 +1,7 @@
 import React from "react";
 import { CloseOutlined } from "@ant-design/icons";
 import moment from "moment";
+import "../styles/ViewWeatherRight.scss";
 
 function ViewWeather({ weathers, active, setActive }) {
   return (
