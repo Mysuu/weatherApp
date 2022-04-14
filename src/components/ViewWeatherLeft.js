@@ -8,10 +8,6 @@ import "../styles/ViewWeatherLeft.scss";
 function ViewWeatherLeft({ updateCity, weathers, active }) {
   const [toggle, setToggle] = useState(false);
 
-  const handleChangWeather = () => {
-    toggle ? setToggle(false) : setToggle(true);
-  };
-
   return (
     <div className="views-left">
       <MenuOutlined style={{ color: "#1890ff" }} />
@@ -20,8 +16,8 @@ function ViewWeatherLeft({ updateCity, weathers, active }) {
           <h1>{updateCity}</h1>
         </div>
         <div>
-          <Switch defaultChecked onClick={handleChangWeather} />
-          {toggle ? <span>°F</span> : <span>°C</span>}
+          <Switch defaultChecked onClick={() => setToggle(!toggle)} />
+          <span>{toggle ? "°F" : "°C"}</span>
         </div>
       </div>
       <div>
@@ -43,7 +39,7 @@ function ViewWeatherLeft({ updateCity, weathers, active }) {
               ? weathers && Math.round(weathers[active].main.temp * 1.8) + 32
               : weathers && Math.round(weathers[active].main.temp)}
           </b>
-          {toggle ? <span>°F</span> : <span>°C</span>}
+          <span>{toggle ? "°F" : "°C"}</span>
         </h2>
       </div>
       <div>
