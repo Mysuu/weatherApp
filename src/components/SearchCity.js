@@ -5,15 +5,11 @@ import { ListCity } from "../utils/constant";
 
 const { Option } = Select;
 
-function SearchCity({ setUpdateCity }) {
-  // const [isShowSuggestion, setIsShowSuggestion] = useState("");
-
-  // const onFocus = (e) => {
-  //   const showCity = ListCity.map((item) => {
-  //     return item.name;
-  //   });
-  //   setIsShowSuggestion(true);
-  // };
+function SearchCity({ setNameCity, setUpdateCity }) {
+  const onSelect = (e) => {
+    setNameCity(ListCity[e].cityName); //show data api mới theo tên đc chọn
+    setUpdateCity(ListCity[e].name); //cập nhật thành phố chọn
+  };
 
   return (
     <div className="input-search">
@@ -24,7 +20,7 @@ function SearchCity({ setUpdateCity }) {
         filterOption={(input, option) =>
           option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
         }
-        onSelect={(e) => setUpdateCity(ListCity[e].name)}
+        onSelect={(e) => onSelect(e)}
       >
         {ListCity.map((i, index) => {
           return <Option key={index}>{i.name}</Option>;
