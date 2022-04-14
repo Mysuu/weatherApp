@@ -34,7 +34,11 @@
   .views-left-weather {
     display: flex;
     align-items: center;
-    margin-left: 70px;
+    margin-left: 50px;
+
+    img {
+      width: 120px;
+    }
 
     b {
       font-size: 25px;

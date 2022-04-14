@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { MenuOutlined } from "@ant-design/icons";
 import { Switch } from "antd";
 import moment from "moment";
+import Clock from "react-live-clock";
 import "../styles/ViewWeatherLeft.scss";
 
 function ViewWeatherLeft({ updateCity, weathers, active }) {
@@ -25,10 +26,11 @@ function ViewWeatherLeft({ updateCity, weathers, active }) {
       </div>
       <div>
         <span>
-          {weathers && moment(weathers[active].dt_txt).format("llll")}
+          {weathers && moment(weathers[active].dt_txt).format("MMMM Do YYYY")}
+          &nbsp;
+          <Clock format={"h:mm A"} />
         </span>
       </div>
-      <br />
       <div className="views-left-weather">
         <img
           src={`http://openweathermap.org/img/wn/${
@@ -45,7 +47,6 @@ function ViewWeatherLeft({ updateCity, weathers, active }) {
           {toggle ? <span>°F</span> : <span>°C</span>}
         </h2>
       </div>
-      <br />
       <div>
         <h1>
           <b style={{ textTransform: "capitalize" }}>
