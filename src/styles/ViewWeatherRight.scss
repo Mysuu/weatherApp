@@ -13,14 +13,16 @@
   }
 
   .views-right-top {
-    margin-top: 40px;
+    h3{
+      position: relative;
+      bottom: -25px;
+    }
   }
 
   .views-right-bottom {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-top: 70px;
     margin-bottom: 10px;
     font-size: 9px;
 

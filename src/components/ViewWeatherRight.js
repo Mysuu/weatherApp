@@ -2,6 +2,7 @@ import React from "react";
 import { CloseOutlined } from "@ant-design/icons";
 import moment from "moment";
 import "../styles/ViewWeatherRight.scss";
+import LineChart from "./LineChart";
 
 function ViewWeather({ weathers, active, setActive }) {
   return (
@@ -9,9 +10,8 @@ function ViewWeather({ weathers, active, setActive }) {
       <CloseOutlined style={{ color: "#1890ff" }} />
       <div className="views-right-top">
         <h3>Temperature</h3>
-        <div>
-          <h1>Chỗ này biểu đồ</h1>
-        </div>
+        <LineChart weathers={weathers} active={active} />
+        <div className="linechart"></div>
       </div>
       <div className="views-right-bottom">
         {weathers &&
