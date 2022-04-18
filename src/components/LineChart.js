@@ -4,19 +4,25 @@ import { Chart as ChartJS, registerables } from "chart.js";
 ChartJS.register(...registerables);
 
 function LineChart({ weathers, active, toggle }) {
-  console.log("toggle", toggle);
   const [showTemp, setShowTemp] = useState([]);
-
-  console.log("showTemp", showTemp);
   useEffect(() => {
     const fullTemp =
-      weathers && weathers.map((data) => Math.round(data.main.temp));
+      weathers &&
+      weathers.map((data) => {
+        if (toggle) {
+          return Math.round(data.main.temp * 1.8 + 32);
+        } else {
+          return Math.round(data.main.temp);
+        }
+      });
     setShowTemp(fullTemp);
-  }, [weathers]);
+  }, [weathers, toggle]);
+
+  console.log("showTemp", showTemp);
 
   function alternatePointRadius(ctx, nbr) {
     const index = ctx.dataIndex;
-    return index === nbr ? 7 : 0;
+    return index === nbr ? 5 : 0;
   }
 
   const data = {
@@ -25,14 +31,12 @@ function LineChart({ weathers, active, toggle }) {
       {
         label: null,
         data: showTemp,
-        fill: true,
         pointRadius: (ctx) => alternatePointRadius(ctx, active),
         borderColor: "dodgerblue",
+        backgroundColor: "dodgerblue",
         tension: 0.4,
         borderWidth: 2,
-        pointStyle: toggle
-          ? `${Math.round(showTemp[active] * 1.8 + 32)}°F`
-          : `${Math.round(showTemp[active])}°C`,
+        pointStyle: toggle ? `${showTemp[active]}°F` : `${showTemp[active]}°C`,
       },
     ],
   };
@@ -45,8 +49,8 @@ function LineChart({ weathers, active, toggle }) {
         display: false,
       },
       y: {
-        min: -5,
-        max: 40,
+        min: -20,
+        max: 80,
         display: false,
       },
     },
