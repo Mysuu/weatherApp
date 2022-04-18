@@ -7,6 +7,11 @@
     align-items: center;
     margin-top: 15px;
     margin-left: 20px;
+    margin-right: 20px;
+
+    .ant-switch-checked, .ant-switch {
+      margin-left: 630px;
+    }
   }
 
   h4 {

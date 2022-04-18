@@ -1,5 +1,5 @@
 import React from "react";
-import { Collapse } from "antd";
+import { Collapse, Switch } from "antd";
 import "../../styles/Hourly.scss";
 
 const { Panel } = Collapse;
@@ -15,6 +15,9 @@ function Hourly() {
         </div>
         <div>
           <h4>Hà Nội</h4>
+        </div>
+        <div style={{ float: "right" }}>
+          <Switch onClick />
         </div>
       </div>
       <div className="timer">As of 3:15 PM</div>
