@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getWeatherFetch } from "../redux/actions";
-import "../styles/Home.scss";
+import { getWeatherFetch } from "../../redux/actions";
+import "../../styles/Home.scss";
 import SearchCity from "./SearchCity";
 import Nav from "./Nav";
 import ViewWeatherRight from "./ViewWeatherRight";

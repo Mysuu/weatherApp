@@ -3,7 +3,7 @@ import { MenuOutlined } from "@ant-design/icons";
 import { Switch } from "antd";
 import moment from "moment";
 import Clock from "react-live-clock";
-import "../styles/ViewWeatherLeft.scss";
+import "../../styles/ViewWeatherLeft.scss";
 
 function ViewWeatherLeft({ updateCity, weathers, active, toggle, setToggle }) {
   return (

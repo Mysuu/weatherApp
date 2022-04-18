@@ -1,7 +1,7 @@
 import React from "react";
 import { CloseOutlined } from "@ant-design/icons";
 import moment from "moment";
-import "../styles/ViewWeatherRight.scss";
+import "../../styles/ViewWeatherRight.scss";
 import LineChart from "./LineChart";
 
 function ViewWeather({ weathers, active, setActive, toggle }) {
