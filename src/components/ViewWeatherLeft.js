@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { MenuOutlined } from "@ant-design/icons";
 import { Switch } from "antd";
 import moment from "moment";
 import Clock from "react-live-clock";
 import "../styles/ViewWeatherLeft.scss";
 
-function ViewWeatherLeft({ updateCity, weathers, active }) {
-  const [toggle, setToggle] = useState(false);
-
+function ViewWeatherLeft({ updateCity, weathers, active, toggle, setToggle }) {
   return (
     <div className="views-left">
       <MenuOutlined style={{ color: "#1890ff" }} />

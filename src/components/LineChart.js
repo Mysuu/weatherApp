@@ -3,16 +3,21 @@ import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, registerables } from "chart.js";
 ChartJS.register(...registerables);
 
-function LineChart({ weathers, active }) {
+function LineChart({ weathers, active, toggle }) {
+  console.log("toggle", toggle);
   const [showTemp, setShowTemp] = useState([]);
-  console.log("active", active);
-  console.log("weathers", weathers);
 
+  console.log("showTemp", showTemp);
   useEffect(() => {
-    const fullTemp = weathers && weathers.map((data) => data.main.temp);
+    const fullTemp =
+      weathers && weathers.map((data) => Math.round(data.main.temp));
     setShowTemp(fullTemp);
-    console.log("fullTemp", fullTemp);
-  }, [active, weathers]);
+  }, [weathers]);
+
+  function alternatePointRadius(ctx, nbr) {
+    const index = ctx.dataIndex;
+    return index === nbr ? 7 : 0;
+  }
 
   const data = {
     labels: ["", "", "", "", ""],
@@ -21,8 +26,13 @@ function LineChart({ weathers, active }) {
         label: null,
         data: showTemp,
         fill: true,
+        pointRadius: (ctx) => alternatePointRadius(ctx, active),
         borderColor: "dodgerblue",
         tension: 0.4,
+        borderWidth: 2,
+        pointStyle: toggle
+          ? `${Math.round(showTemp[active] * 1.8 + 32)}°F`
+          : `${Math.round(showTemp[active])}°C`,
       },
     ],
   };
@@ -41,6 +51,10 @@ function LineChart({ weathers, active }) {
       },
     },
     plugins: {
+      title: {
+        display: true,
+        text: (ctx) => `Temperature: ${ctx.chart.data.datasets[0].pointStyle}`,
+      },
       legend: {
         display: false,
       },

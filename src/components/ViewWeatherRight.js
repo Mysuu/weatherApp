@@ -4,14 +4,13 @@ import moment from "moment";
 import "../styles/ViewWeatherRight.scss";
 import LineChart from "./LineChart";
 
-function ViewWeather({ weathers, active, setActive }) {
+function ViewWeather({ weathers, active, setActive, toggle }) {
   return (
     <div className="views-right">
       <CloseOutlined style={{ color: "#1890ff" }} />
       <div className="views-right-top">
-        <h3>Temperature</h3>
-        <LineChart weathers={weathers} active={active} />
-        <div className="linechart"></div>
+        <h3>&nbsp;</h3>
+        <LineChart weathers={weathers} active={active} toggle={toggle} />
       </div>
       <div className="views-right-bottom">
         {weathers &&
