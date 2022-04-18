@@ -10,6 +10,7 @@ const myFirstReducer = (state = initState, action) => {
   switch (action.type) {
     case GET_WEATHER_SUCCESS:
       return {
+        ...state,
         weathers: {
           weekWeather: action.newData.data,
         },

@@ -8,17 +8,13 @@ function LineChart({ weathers, active, toggle }) {
   useEffect(() => {
     const fullTemp =
       weathers &&
-      weathers.map((data) => {
-        if (toggle) {
-          return Math.round(data.main.temp * 1.8 + 32);
-        } else {
-          return Math.round(data.main.temp);
-        }
-      });
+      weathers.map((data) =>
+        toggle
+          ? Math.round(data.main.temp * 1.8 + 32)
+          : Math.round(data.main.temp)
+      );
     setShowTemp(fullTemp);
   }, [weathers, toggle]);
-
-  console.log("showTemp", showTemp);
 
   function alternatePointRadius(ctx, nbr) {
     const index = ctx.dataIndex;
@@ -50,7 +46,7 @@ function LineChart({ weathers, active, toggle }) {
       },
       y: {
         min: -20,
-        max: 80,
+        max: 120,
         display: false,
       },
     },
