@@ -59,22 +59,22 @@
         width: 53%;
         text-align: right;
       }
-    }  
-  }
-
-  h4 {
-    position: relative;
-    top: 1px
-  }
-
-  .timer {
-    margin-left: 22px;
-    margin-right: 20px;
-  }
-
-  .hr {
-    margin: 20px;
-    border-bottom: 1px solid grey;
+    } 
+    
+    h4 {
+      position: relative;
+      top: 1px
+    }
+  
+    .timer {
+      margin-left: 22px;
+      margin-right: 20px;
+    }
+  
+    .hr {
+      margin: 20px;
+      border-bottom: 1px solid grey;
+    }
   }
 
   .views-temp {
@@ -120,7 +120,7 @@
 
   .ant-collapse-ghost {
     padding-bottom: 10px;
-    margin-right: 10px;
+    margin: 0 20px;
 
     .ant-collapse-header {
       float: right;
