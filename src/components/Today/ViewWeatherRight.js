@@ -23,7 +23,7 @@ function ViewWeather({ weathers, active, setActive, toggle }) {
                   setActive(index);
                 }}
               >
-                <h3>{moment(item.dt_txt).format("lll")}</h3>
+                <h3>{moment(item.dt_txt).format("MMM Do YYYY, HH:mm")}</h3>
                 <img
                   src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
                   alt=""

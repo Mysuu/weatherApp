@@ -14,7 +14,9 @@ function ViewWeathers({ weathers }) {
           return (
             <>
               <div className="views-temp" key={index}>
-                <div className="clock">{moment(item.dt_txt).format("LT")}</div>
+                <div className="clock">
+                  {moment(item.dt_txt).format("MMM Do, HH:mm")}
+                </div>
                 <div className="temp">{Math.round(item.main.temp)}°C</div>
                 <div className="status-temp">
                   <img

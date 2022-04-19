@@ -21,6 +21,7 @@ function Hourly() {
     (state) => state.myFirstReducer.weathers.weekWeather
   );
 
+  console.log(weathers);
   useEffect(() => {
     dispatch(getWeatherFetch([nameCity, num])); //data api, bắt đầu dispatch tìm cái hàm getWeatherFetch tromg actions
   }, [nameCity, num]);
