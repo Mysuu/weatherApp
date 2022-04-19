@@ -19,17 +19,17 @@ function VerticalBarChart({ weathers }) {
       {
         label: "Temperature",
         data: weathers.map((item) => item.main.temp),
-        backgroundColor: "rgba(255, 99, 132, 0.2)",
+        backgroundColor: "#FF6666",
       },
       {
         label: "Humidity",
         data: weathers.map((item) => item.main.humidity),
-        backgroundColor: "rgba(75, 192, 192, 0.2)",
+        backgroundColor: "#3366FF",
       },
       {
         label: "Wind speed",
         data: weathers.map((item) => item.wind.speed),
-        backgroundColor: "rgba(153, 102, 255, 0.2)",
+        backgroundColor: "#996666",
       },
     ],
   };
