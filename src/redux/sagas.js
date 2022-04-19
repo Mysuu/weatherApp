@@ -4,12 +4,12 @@ import {
   GET_WEATHER_FETCH,
   GET_WEATHER_FAILED,
 } from "./actions";
-import weatherFetch from "./api";
+import { weatherFetch } from "./api";
 
 function* workGetWeatherFetch({ payload }) {
   //payload là dữ liệu nhận bên actions
   try {
-    const weathers = yield call(weatherFetch, payload); //call api, truyền payload xuống api
+    const weathers = yield call(weatherFetch, ...payload); //call api, truyền payload xuống api
     const newData = {
       name: weathers.city.name,
       data: weathers.list,

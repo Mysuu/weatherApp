@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getWeatherFetch } from "../../redux/actions";
+import getWeatherFetch from "../../redux/actions";
 import "../../styles/Home.scss";
 import SearchCity from "./SearchCity";
 import Nav from "./Nav";
@@ -13,15 +13,15 @@ function Home() {
   const [updateCity, setUpdateCity] = useState("Hà Nội");
   const [active, setActive] = useState(0);
   const [toggle, setToggle] = useState(false);
-
+  const num = 5;
   const dispatch = useDispatch();
   const weathers = useSelector(
     (state) => state.myFirstReducer.weathers.weekWeather
   );
 
   useEffect(() => {
-    dispatch(getWeatherFetch(nameCity)); //data api, bắt đầu dispatch tìm cái hàm getWeatherFetch tromg actions
-  }, [nameCity]);
+    dispatch(getWeatherFetch([nameCity, num])); //data api, bắt đầu dispatch tìm cái hàm getWeatherFetch tromg actions
+  }, [nameCity, num]);
 
   return (
     <>
