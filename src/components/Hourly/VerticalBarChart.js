@@ -11,7 +11,8 @@ function VerticalBarChart({ weathers }) {
   };
 
   const labels =
-    weathers && weathers.map((item) => moment(item.dt_txt).format("LT"));
+    weathers &&
+    weathers.map((item) => moment(item.dt_txt).format("MMM Do HH:mm"));
   const data = {
     labels,
     datasets: [
