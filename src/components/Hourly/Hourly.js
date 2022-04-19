@@ -8,17 +8,18 @@ import "../../styles/Hourly.scss";
 import Nav from "../Today/Nav";
 import SearchCity from "../Today/SearchCity";
 import ViewWeathers from "./ViewWeathers";
+import VerticalBarChart from "./VerticalBarChart";
 
 function Hourly() {
   const [nameCity, setNameCity] = useState("ha noi");
   const [updateCity, setUpdateCity] = useState("Hà Nội");
+  const [changeChart, setChangeChart] = useState(false);
   const num = 8;
 
   const dispatch = useDispatch();
   const weathers = useSelector(
     (state) => state.myFirstReducer.weathers.weekWeather
   );
-  console.log("check data", weathers);
 
   useEffect(() => {
     dispatch(getWeatherFetch([nameCity, num])); //data api, bắt đầu dispatch tìm cái hàm getWeatherFetch tromg actions
@@ -40,14 +41,18 @@ function Hourly() {
               <h4>{updateCity}</h4>
             </div>
             <div className="switch" style={{ float: "right" }}>
-              <Switch onClick />
+              <Switch onClick={() => setChangeChart(!changeChart)} />
             </div>
           </div>
           <div className="timer">
             As of <Clock format={"h:mm A"} ticking={true} />
           </div>
           <div className="hr"></div>
-          <ViewWeathers weathers={weathers} />
+          {changeChart ? (
+            <VerticalBarChart weathers={weathers} />
+          ) : (
+            <ViewWeathers weathers={weathers} />
+          )}
         </div>
       </div>
     </>
