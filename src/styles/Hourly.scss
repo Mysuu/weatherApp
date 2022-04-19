@@ -125,29 +125,30 @@
     .ant-collapse-header {
       float: right;
       position: relative;
-      top: -37px;
+      top: -38px;
+      margin-right: -10px;
       color: dodgerblue!important;
     }
-  }
 
-  .full-temp {
-    border: 1px solid gray!important;
-    border-radius: 5px;
-    margin-top: 20px;
-
-    .temp-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      width: 100%;
-
-      .temp-items {
+    .full-temp {
+      border: 1px solid gray!important;
+      border-radius: 5px;
+      margin-top: 20px;
+  
+      .temp-top {
         display: flex;
-        flex-direction: column;
         align-items: center;
-
-        .temp-views {
+        justify-content: space-around;
+        width: 100%;
+  
+        .temp-items {
           display: flex;
+          flex-direction: column;
+          align-items: center;
+  
+          .temp-views {
+            display: flex;
+          }
         }
       }
     }
