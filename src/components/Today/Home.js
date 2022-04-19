@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import getWeatherFetch from "../../redux/actions";
 import "../../styles/Home.scss";
 import SearchCity from "./SearchCity";
-import Nav from "./Nav";
+import Nav from "../Nav/Nav";
 import ViewWeatherRight from "./ViewWeatherRight";
 import ViewWeatherLeft from "./ViewWeatherLeft";
 

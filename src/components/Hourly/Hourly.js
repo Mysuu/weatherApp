@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Clock from "react-live-clock";
 import getWeatherFetch from "../../redux/actions";
 import "../../styles/Hourly.scss";
-import Nav from "../Today/Nav";
+import Nav from "../Nav/Nav";
 import SearchCity from "../Today/SearchCity";
 import ViewWeathers from "./ViewWeathers";
 import VerticalBarChart from "./VerticalBarChart";
