@@ -1,7 +1,7 @@
 import React from "react";
 import { Select } from "antd";
-import "../styles/SearchCity.scss";
-import { ListCity } from "../utils/constant";
+import "../../styles/SearchCity.scss";
+import { ListCity } from "../../utils/constant";
 
 const { Option } = Select;
 

@@ -16,7 +16,14 @@ function Nav() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/hourly">Hourly</NavLink>
+          <NavLink
+            to="/hourly"
+            className={({ isActive }) =>
+              isActive ? "activeClassName" : undefined
+            }
+          >
+            Hourly
+          </NavLink>
         </li>
         <li>
           <NavLink to="/10days">10 days</NavLink>
