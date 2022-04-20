@@ -6,12 +6,14 @@ import ViewDetailsExtend from "./ViewDetailsExtend";
 
 function ViewDetails({ item }) {
   const [isDetail, setIsDetail] = useState(false);
+  const now = moment(new Date()).format("MMM D");
+  const today = moment(item.datetime).format("MMM D");
   return (
     <>
       {!isDetail ? (
         <div className="view-details" onClick={() => setIsDetail(true)}>
           <div className="days">
-            <h3>{moment(item.datetime).format("MMM D")}</h3>
+            <h3>{today === now ? "Today" : today}</h3>
           </div>
           <div className="temp">{Math.round(item.temp)}°C</div>
           <div className="img-temp">
@@ -26,7 +28,12 @@ function ViewDetails({ item }) {
           <AiOutlineDown color="dodgerblue" />
         </div>
       ) : (
-        <ViewDetailsExtend item={item} setIsDetail={setIsDetail} />
+        <ViewDetailsExtend
+          item={item}
+          setIsDetail={setIsDetail}
+          today={today}
+          now={now}
+        />
       )}
       <div className="hr"></div>
     </>

@@ -1,18 +1,15 @@
 import React from "react";
 import { WiCloud, WiHumidity, WiRaindrop, WiHot } from "react-icons/wi";
 import { FaWind } from "react-icons/fa";
-import moment from "moment";
 import { AiOutlineUp } from "react-icons/ai";
 import "./ViewDetailsExtend.scss";
 
-function ViewDetailsExtend({ item, setIsDetail }) {
+function ViewDetailsExtend({ item, setIsDetail, now, today }) {
   return (
     <div className="view-details-2" onClick={() => setIsDetail(false)}>
       <div className="days-2">
         <div className="days-2-left">
-          <div className="timer-2">
-            {moment(item.datetime).format("MMM D")} | Day
-          </div>
+          <div className="timer-2">{today === now ? "Today" : today} | Day</div>
           <div className="img-temp-2">
             <div className="temp-witdh">{Math.round(item.temp)}°C</div>
             <img

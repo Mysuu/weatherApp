@@ -18,7 +18,6 @@ function Tendays() {
     (state) => state.mySecondReducer.weathers.tendays
   );
 
-  console.log("weathers", weathers);
   useEffect(() => {
     dispatch(getWeatherTenDays(nameCity));
   }, [nameCity]);
