@@ -15,7 +15,7 @@ function Tendays() {
 
   const dispatch = useDispatch();
   const weathers = useSelector(
-    (state) => state.mySecondReducer.weathers.tendays
+    (state) => state.myFirstReducer.weathers.tendays
   );
 
   useEffect(() => {
@@ -43,10 +43,10 @@ function Tendays() {
             As of <Clock format={"h:mm A"} ticking={true} />
           </div>
           {weathers &&
-            weathers.map((item) => (
-              <>
+            weathers.map((item, index) => (
+              <div key={index}>
                 <ViewDetails item={item} />
-              </>
+              </div>
             ))}
         </div>
       </div>

@@ -7,12 +7,11 @@ import { Provider } from "react-redux";
 import { combineReducers, createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from "@redux-saga/core";
 import myFirstReducer from "./redux/reducer";
-import mySecondReducer from "./redux/tenReducer";
 import mySaga from "./redux/sagas";
 
 const sagaMiddleware = createSagaMiddleware();
 
-const rootReducer = combineReducers({ myFirstReducer, mySecondReducer });
+const rootReducer = combineReducers({ myFirstReducer });
 const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(mySaga);
 
