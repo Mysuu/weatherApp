@@ -27,9 +27,11 @@ function HalfMonth() {
 
   const data = useMemo(() => {
     let newdata = [];
-    for (let i = 1; i <= 3; i++) {
-      const result = weathers.slice((i - 1) * 7, i * 7);
-      newdata.push(result);
+    if (weathers && weathers.length > 0) {
+      for (let i = 1; i <= 3; i++) {
+        const result = weathers.slice((i - 1) * 7, i * 7);
+        newdata.push(result);
+      }
     }
     return newdata;
   }, [weathers]);
