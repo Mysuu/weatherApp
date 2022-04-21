@@ -5,3 +5,5 @@ export const ListCity = [
   { id: "3", name: "Hà Nam", cityName: "hanam" },
   { id: "4", name: "Cần Thơ", cityName: "can tho" },
 ];
+
+export const week = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];

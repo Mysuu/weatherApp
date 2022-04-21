@@ -6,8 +6,11 @@ import {
   GET_WEATHER_TEN_DAYS,
   GET_WEATHER_TEN_DAYS_SUCCESS,
   GET_WEATHER_TEN_DAYS_FAILED,
+  GET_WEATHER_HALF_MONTH,
+  GET_WEATHER_HALF_MONTH_FAILED,
+  GET_WEATHER_HALF_MONTH_SUCCESS,
 } from "./actions";
-import { weatherFetch, weatherTenDay } from "./api";
+import { weatherFetch, weatherTenDay, weatherHalfMonth } from "./api";
 
 function* workGetWeatherFetch({ payload }) {
   //payload là dữ liệu nhận bên actions
@@ -38,9 +41,24 @@ function* workGetWeatherTenDays({ payload }) {
   }
 }
 
+function* workGetWeatherHalfMonth({ payload }) {
+  //payload là dữ liệu nhận bên actions
+  try {
+    const weathers = yield call(weatherHalfMonth, payload); //call api, truyền payload xuống api
+    const dataMonth = {
+      name: weathers.city_name,
+      data: weathers.data,
+    };
+    yield put({ type: GET_WEATHER_HALF_MONTH_SUCCESS, dataMonth });
+  } catch (error) {
+    yield put({ type: GET_WEATHER_HALF_MONTH_FAILED });
+  }
+}
+
 function* mySaga() {
   yield takeEvery(GET_WEATHER_FETCH, workGetWeatherFetch); //kiểm tra type GET_WEATHER_FETCH bên actions xem có hđ không
   yield takeEvery(GET_WEATHER_TEN_DAYS, workGetWeatherTenDays);
+  yield takeEvery(GET_WEATHER_HALF_MONTH, workGetWeatherHalfMonth);
 }
 
 export default mySaga;
