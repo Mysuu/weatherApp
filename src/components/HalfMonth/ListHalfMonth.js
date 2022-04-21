@@ -1,14 +1,14 @@
 import React from "react";
 import moment from "moment";
 
-function ListHalfMonth({ item, setActive, index, active, setIndex, i }) {
+function ListHalfMonth({ item, i, index, setIndexDay, active, setActive }) {
   return (
     <>
       <button
         className={`btn_day ${active === index && "active"}`}
         onClick={() => {
           setActive(index);
-          setIndex(i);
+          setIndexDay(i);
         }}
       >
         <span>{moment(item.datetime).format("D")}</span>

@@ -14,7 +14,7 @@ function HalfMonth() {
   const [nameCity, setNameCity] = useState("ha noi");
   const [updateCity, setUpdateCity] = useState("Hà Nội");
   const [active, setActive] = useState(0);
-  const [index, setIndex] = useState(0);
+  const [indexDay, setIndexDay] = useState([]);
 
   const dispatch = useDispatch();
   const weathers = useSelector(
@@ -73,12 +73,13 @@ function HalfMonth() {
                           i={i}
                           item={item}
                           active={active}
-                          setIndex={setIndex}
+                          indexDay={indexDay}
                           setActive={setActive}
+                          setIndexDay={setIndexDay}
                         />
                       );
                     })}
-                    {index === i && (
+                    {indexDay === i && (
                       <DetailHalfMonth item={a} active={active} />
                     )}
                   </React.Fragment>
