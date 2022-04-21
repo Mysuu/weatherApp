@@ -117,6 +117,8 @@
       .btn_day:focus {
         outline: 2px solid var(--black-color);
         z-index: 99;
+        border: 2px solid black;
+        border-radius: 3px;
       }
     }
   }

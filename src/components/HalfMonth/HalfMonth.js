@@ -13,6 +13,8 @@ import DetailHalfMonth from "./DetailHalfMonth";
 function HalfMonth() {
   const [nameCity, setNameCity] = useState("ha noi");
   const [updateCity, setUpdateCity] = useState("Hà Nội");
+  const [active, setActive] = useState(0);
+  const [index, setIndex] = useState(0);
 
   const dispatch = useDispatch();
   const weathers = useSelector(
@@ -64,9 +66,21 @@ function HalfMonth() {
                 return (
                   <React.Fragment key={i}>
                     {a.map((item, index) => {
-                      return <ListHalfMonth key={index} item={item} />;
+                      return (
+                        <ListHalfMonth
+                          key={index}
+                          index={index}
+                          i={i}
+                          item={item}
+                          active={active}
+                          setIndex={setIndex}
+                          setActive={setActive}
+                        />
+                      );
                     })}
-                    {<DetailHalfMonth item={a} />}
+                    {index === i && (
+                      <DetailHalfMonth item={a} active={active} />
+                    )}
                   </React.Fragment>
                 );
               })}

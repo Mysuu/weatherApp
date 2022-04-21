@@ -1,16 +1,14 @@
 .view-details-month {
   display: flex;
-  justify-content: space-between;
   margin-top: 30px;
   margin-left: 30px;
-  margin-right: 30px;
+  width: 800px;
 
   .month {
     display: flex;
-    width: 80%;
 
     .month-left {
-      width: 40%;
+      width: 250px;
       margin-left: 15px;
 
       .month-timer {
@@ -23,12 +21,12 @@
         justify-content: space-between;
 
         .month-temp-witdh {
-          font-size: 50px;
+          font-size: 60px;
           font-weight: 700;
         }
 
         img {
-          width: 100px;
+          width: 80px;
           margin-right: 30px;
         }
       }
@@ -63,7 +61,7 @@
     }
 
     .month-right {
-      width: 35%;
+      width: 300px;
       margin-top: 30px;
       display: flex;
       flex-direction: column;
@@ -79,6 +77,11 @@
         display: flex;
         align-items: center;
       }
+    }
+
+    .close {
+      width: 220px;
+      text-align: right;
     }
   }
 }

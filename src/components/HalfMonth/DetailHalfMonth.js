@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { WiCloud, WiHumidity, WiRaindrop, WiHot } from "react-icons/wi";
 import { FaWind } from "react-icons/fa";
-import { AiOutlineUp } from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai";
 import moment from "moment";
 import "./DetailHalfMonth.scss";
 
-function DetailHalfMonth({ item }) {
-  const [active, setActive] = useState(0);
+function DetailHalfMonth({ item, active }) {
   const now = moment(new Date()).format("MMM D");
-  const today = moment(item.datetime).format("MMM D");
+  const today = moment(item[active] && item[active].datetime).format("MMM D");
   return (
     <div className="view-details-month">
       <div className="month">
@@ -64,8 +63,10 @@ function DetailHalfMonth({ item }) {
             <div>&nbsp;{item[active] && item[active].wind_spd}km/h</div>
           </div>
         </div>
+        <div className="close">
+          <AiOutlineClose color="dodgerblue" />
+        </div>
       </div>
-      <AiOutlineUp color="dodgerblue" />
     </div>
   );
 }
