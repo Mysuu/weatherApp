@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../styles/ToggleSwitch.scss";
 
-function ToggleSwitch() {
-  const [isToggled, setIsToggled] = useState(false);
-  const onToggle = () => setIsToggled(!isToggled);
+function ToggleSwitch({ changeBarChart, setChangeBarChart }) {
+  const onToggle = () => setChangeBarChart(!changeBarChart);
   return (
     <label className="toggle-switch">
-      <input type="checkbox" checked={isToggled} onChange={onToggle} />
+      <input type="checkbox" checked={!changeBarChart} onChange={onToggle} />
       <span className="switch" />
     </label>
   );
