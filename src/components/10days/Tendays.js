@@ -8,10 +8,12 @@ import Nav from "../Nav/Nav";
 import "../../styles/Tendays.scss";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import ViewDetails from "./ViewDetails";
+import BarChart from "./BarChart";
 
 function Tendays() {
   const [nameCity, setNameCity] = useState("ha noi");
   const [updateCity, setUpdateCity] = useState("Hà Nội");
+  const [changeBarChart, setChangeBarChart] = useState(true);
 
   const dispatch = useDispatch();
   const weathers = useSelector(
@@ -37,15 +39,23 @@ function Tendays() {
                 <h4>{updateCity}</h4>
               </div>
             </div>
-            <ToggleSwitch />
+            <ToggleSwitch
+              onClick={() => setChangeBarChart(!changeBarChart)}
+              changeBarChart={changeBarChart}
+              setChangeBarChart={setChangeBarChart}
+            />
           </div>
           <div className="timer">
             As of <Clock format={"h:mm A"} ticking={true} />
           </div>
-          {weathers &&
+          {changeBarChart ? (
+            weathers &&
             weathers.map((item, index) => (
               <ViewDetails key={index} item={item} />
-            ))}
+            ))
+          ) : (
+            <BarChart weathers={weathers} />
+          )}
         </div>
       </div>
     </>
