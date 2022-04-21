@@ -4,14 +4,18 @@ import { AiOutlineDown } from "react-icons/ai";
 import "./ViewDetails.scss";
 import ViewDetailsExtend from "./ViewDetailsExtend";
 
-function ViewDetails({ item }) {
-  const [isDetail, setIsDetail] = useState(false);
+function ViewDetails({ item, index }) {
+  const [isDetail, setIsDetail] = useState(true);
   const now = moment(new Date()).format("MMM D");
   const today = moment(item.datetime).format("MMM D");
   return (
     <>
-      {!isDetail ? (
-        <div className="view-details" onClick={() => setIsDetail(true)}>
+      {isDetail ? (
+        <div
+          key={index}
+          className="view-details"
+          onClick={() => setIsDetail(false)}
+        >
           <div className="days">
             <h3>{today === now ? "Today" : today}</h3>
           </div>

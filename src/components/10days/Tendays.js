@@ -44,9 +44,7 @@ function Tendays() {
           </div>
           {weathers &&
             weathers.map((item, index) => (
-              <div key={index}>
-                <ViewDetails item={item} />
-              </div>
+              <ViewDetails key={index} item={item} />
             ))}
         </div>
       </div>

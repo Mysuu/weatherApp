@@ -6,7 +6,7 @@ import "./ViewDetailsExtend.scss";
 
 function ViewDetailsExtend({ item, setIsDetail, now, today }) {
   return (
-    <div className="view-details-2" onClick={() => setIsDetail(false)}>
+    <div className="view-details-2" onClick={() => setIsDetail(true)}>
       <div className="days-2">
         <div className="days-2-left">
           <div className="timer-2">{today === now ? "Today" : today} | Day</div>
