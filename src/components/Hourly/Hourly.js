@@ -3,10 +3,10 @@ import React, { useEffect, useState } from "react";
 import { Switch } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import Clock from "react-live-clock";
-import getWeatherFetch from "../../redux/actions";
+import { getWeatherFetch } from "../../redux/actions";
 import "../../styles/Hourly.scss";
-import Nav from "../Nav/Nav";
 import SearchCity from "../Today/SearchCity";
+import Nav from "../Nav/Nav";
 import ViewWeathers from "./ViewWeathers";
 import VerticalBarChart from "./VerticalBarChart";
 

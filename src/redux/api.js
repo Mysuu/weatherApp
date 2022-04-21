@@ -8,4 +8,14 @@ function weatherFetch(nameCity, num) {
   });
 }
 
-export { weatherFetch };
+function weatherTenDay(nameCity) {
+  return fetch(
+    `https://api.weatherbit.io/v2.0/forecast/daily?city=${nameCity}&country=VN&days=10&units=Metric&key=20eda79102f04b16b4bf113386d12ca8`
+  ).then((res) => {
+    if (res.status === 200) {
+      return res.json(); //trả về dữ liệu
+    }
+  });
+}
+
+export { weatherFetch, weatherTenDay };
