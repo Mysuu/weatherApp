@@ -5,7 +5,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import moment from "moment";
 import "./DetailHalfMonth.scss";
 
-function DetailHalfMonth({ item, active }) {
+function DetailHalfMonth({ item, active, setIndexDay }) {
   const now = moment(new Date()).format("MMM D");
   const today = moment(item[active] && item[active].datetime).format("MMM D");
   return (
@@ -64,7 +64,11 @@ function DetailHalfMonth({ item, active }) {
           </div>
         </div>
         <div className="close">
-          <AiOutlineClose color="dodgerblue" />
+          <AiOutlineClose
+            color="dodgerblue"
+            style={{ cursor: "pointer" }}
+            onClick={() => setIndexDay(null)}
+          />
         </div>
       </div>
     </div>

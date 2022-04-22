@@ -82,7 +82,11 @@ function HalfMonth() {
                       );
                     })}
                     {indexDay === i && (
-                      <DetailHalfMonth item={a} active={active} />
+                      <DetailHalfMonth
+                        item={a}
+                        active={active}
+                        setIndexDay={setIndexDay}
+                      />
                     )}
                   </React.Fragment>
                 );
