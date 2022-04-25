@@ -29,19 +29,15 @@ function HalfMonth() {
     let newdata = [];
 
     if (weathers && weathers.length > 0) {
-      const currentDay = toDay;
-      if (currentDay) {
-        for (let i = 0; i < currentDay; i++) {
+      if (toDay) {
+        for (let i = 0; i < toDay; i++) {
           weathers.unshift(empty);
         }
       }
 
       if (weathers && weathers.length > 0) {
         for (let i = 1; i <= 3; i++) {
-          const result = weathers.slice(
-            (i - 1) * 7 + currentDay,
-            i * 7 + currentDay
-          );
+          const result = weathers.slice((i - 1) * 7 + toDay, i * 7 + toDay);
           newdata.push(result);
         }
       }
