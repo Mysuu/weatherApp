@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 
-function ListHalfMonth({ item, i, index, setIndexDay, active, setActive }) {
+function ListHalfMonth({ item, i, index, setIndexDay, setActive }) {
   const handleClick = () => {
     if (item.temp) {
       setActive(index);

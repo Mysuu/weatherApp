@@ -83,7 +83,6 @@ function HalfMonth() {
                           index={index}
                           i={i}
                           item={item}
-                          active={active}
                           indexDay={indexDay}
                           setActive={setActive}
                           setIndexDay={setIndexDay}
