@@ -3,7 +3,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getWeatherHalfMonth } from "../../redux/actions";
 import Clock from "react-live-clock";
-import { week } from "../../utils/constant";
+import { week, toDay, empty } from "../../utils/constant";
 import SearchCity from "../Today/SearchCity";
 import Nav from "../Nav/Nav";
 import "./HalfMonth.scss";
@@ -13,7 +13,7 @@ import DetailHalfMonth from "./DetailHalfMonth";
 function HalfMonth() {
   const [nameCity, setNameCity] = useState("ha noi");
   const [updateCity, setUpdateCity] = useState("Hà Nội");
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState([]);
   const [indexDay, setIndexDay] = useState([]);
 
   const dispatch = useDispatch();
@@ -27,13 +27,26 @@ function HalfMonth() {
 
   const data = useMemo(() => {
     let newdata = [];
+
     if (weathers && weathers.length > 0) {
-      for (let i = 1; i <= 3; i++) {
-        const result = weathers.slice((i - 1) * 7, i * 7);
-        newdata.push(result);
+      const currentDay = toDay;
+      if (currentDay) {
+        for (let i = 0; i < currentDay; i++) {
+          weathers.unshift(empty);
+        }
       }
+
+      if (weathers && weathers.length > 0) {
+        for (let i = 1; i <= 3; i++) {
+          const result = weathers.slice(
+            (i - 1) * 7 + currentDay,
+            i * 7 + currentDay
+          );
+          newdata.push(result);
+        }
+      }
+      return newdata;
     }
-    return newdata;
   }, [weathers]);
 
   return (
@@ -57,8 +70,8 @@ function HalfMonth() {
           </div>
           <div className="hr"></div>
           <div className="list-days">
-            {week.map((name, i) => {
-              return <span key={i}>{name}</span>;
+            {week.map((day, i) => {
+              return <span key={i}>{day}</span>;
             })}
           </div>
           <div className="hr"></div>
@@ -99,3 +112,17 @@ function HalfMonth() {
 }
 
 export default HalfMonth;
+
+// if (currentDay) {
+//   const empty = {
+//     datetime: "",
+//     weather: {
+//       icon: "",
+//     },
+//     temp: "",
+//   };
+
+//   for (let i = 0; i < currentDay; i++) {
+//     newdata[0].unshift(empty);
+//   }
+// }
