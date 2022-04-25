@@ -26,7 +26,7 @@ function Home() {
   return (
     <>
       <SearchCity setNameCity={setNameCity} setUpdateCity={setUpdateCity} />
-      {weathers.length > 0 ? (
+      {weathers && weathers.length > 0 ? (
         <div className="container">
           <Nav />
           <div className="views">
