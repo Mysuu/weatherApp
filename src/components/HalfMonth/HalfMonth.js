@@ -107,17 +107,3 @@ function HalfMonth() {
 }
 
 export default HalfMonth;
-
-// if (currentDay) {
-//   const empty = {
-//     datetime: "",
-//     weather: {
-//       icon: "",
-//     },
-//     temp: "",
-//   };
-
-//   for (let i = 0; i < currentDay; i++) {
-//     newdata[0].unshift(empty);
-//   }
-// }
