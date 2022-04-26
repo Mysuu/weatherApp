@@ -10,8 +10,8 @@ function LineChart({ weathers, active, toggle }) {
       weathers &&
       weathers.map((data) =>
         toggle
-          ? Math.round(data.main.temp * 1.8 + 32)
-          : Math.round(data.main.temp)
+          ? Math.round(data.main.temp)
+          : Math.round(data.main.temp * 1.8 + 32)
       );
     setShowTemp(fullTemp);
   }, [weathers, toggle]);
@@ -32,7 +32,7 @@ function LineChart({ weathers, active, toggle }) {
         backgroundColor: "dodgerblue",
         tension: 0.4,
         borderWidth: 2,
-        pointStyle: toggle ? `${showTemp[active]}°F` : `${showTemp[active]}°C`,
+        pointStyle: toggle ? `${showTemp[active]}°C` : `${showTemp[active]}°F`,
       },
     ],
   };
