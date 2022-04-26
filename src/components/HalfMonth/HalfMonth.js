@@ -100,6 +100,7 @@ function HalfMonth() {
                 );
               })}
           </div>
+          <div className="hr2"></div>
         </div>
       </div>
     </>

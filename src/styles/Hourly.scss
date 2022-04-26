@@ -38,6 +38,7 @@
     background-color: white;
     border-radius: 5px;
     margin-top: 15px;
+    margin-bottom: 5px;
 
     .views-city-top {
       display: flex;
@@ -74,6 +75,11 @@
     .hr {
       margin: 20px;
       border-bottom: 1px solid grey;
+    }
+
+    .hr:last-child {
+      margin-bottom: 5px;
+      border-bottom: 1px solid white;
     }
   }
 
@@ -115,42 +121,6 @@
     .wind-speed {
       width: 25%;
       text-align: center;
-    }
-  }
-
-  .ant-collapse-ghost {
-    padding-bottom: 10px;
-    margin: 0 20px;
-
-    .ant-collapse-header {
-      float: right;
-      position: relative;
-      top: -38px;
-      margin-right: -10px;
-      color: dodgerblue!important;
-    }
-
-    .full-temp {
-      border: 1px solid gray!important;
-      border-radius: 5px;
-      margin-top: 20px;
-  
-      .temp-top {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        width: 100%;
-  
-        .temp-items {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-  
-          .temp-views {
-            display: flex;
-          }
-        }
-      }
     }
   }
 }

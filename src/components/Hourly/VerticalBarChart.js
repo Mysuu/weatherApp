@@ -18,17 +18,17 @@ function VerticalBarChart({ weathers }) {
     datasets: [
       {
         label: "Temperature",
-        data: weathers.map((item) => item.main.temp),
+        data: weathers && weathers.map((item) => item.main.temp),
         backgroundColor: "#FF6666",
       },
       {
         label: "Humidity",
-        data: weathers.map((item) => item.main.humidity),
+        data: weathers && weathers.map((item) => item.main.humidity),
         backgroundColor: "#3366FF",
       },
       {
         label: "Wind speed",
-        data: weathers.map((item) => item.wind.speed),
+        data: weathers && weathers.map((item) => item.wind.speed),
         backgroundColor: "#996666",
       },
     ],
