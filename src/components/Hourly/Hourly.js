@@ -13,7 +13,7 @@ import VerticalBarChart from "./VerticalBarChart";
 function Hourly() {
   const [nameCity, setNameCity] = useState("ha noi");
   const [updateCity, setUpdateCity] = useState("Hà Nội");
-  const [changeChart, setChangeChart] = useState(false);
+  const [changeChart, setChangeChart] = useState(true);
   const num = 8;
 
   const dispatch = useDispatch();
@@ -49,9 +49,12 @@ function Hourly() {
           </div>
           <div className="hr"></div>
           {changeChart ? (
-            <VerticalBarChart weathers={weathers} />
+            weathers &&
+            weathers.map((item, index) => (
+              <ViewWeathers item={item} key={index} />
+            ))
           ) : (
-            <ViewWeathers weathers={weathers} />
+            <VerticalBarChart weathers={weathers} />
           )}
         </div>
       </div>

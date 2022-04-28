@@ -12,7 +12,7 @@ function Home() {
   const [nameCity, setNameCity] = useState("ha noi");
   const [updateCity, setUpdateCity] = useState("Hà Nội");
   const [active, setActive] = useState(0);
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
   const num = 5;
   const dispatch = useDispatch();
   const weathers = useSelector(

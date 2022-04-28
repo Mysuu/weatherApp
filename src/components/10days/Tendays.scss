@@ -38,6 +38,7 @@
     background-color: white;
     border-radius: 5px;
     margin-top: 15px;
+    margin-bottom: 5px;
 
     .views-city-top {
       display: flex;
@@ -73,8 +74,12 @@
     }
   
     .hr {
-      margin: 10px 20px;
+      margin: 5px 20px;
       border-bottom: 1px solid grey;
+    }
+
+    .hr:last-child {
+      border-bottom: 1px solid white;
     }
   }
 }

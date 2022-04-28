@@ -66,7 +66,7 @@ function DetailHalfMonth({ item, active, setIndexDay }) {
         <div className="close">
           <AiOutlineClose
             color="dodgerblue"
-            style={{ cursor: "pointer" }}
+            style={{ cursor: "pointer", fontSize: "20px" }}
             onClick={() => setIndexDay(null)}
           />
         </div>

@@ -14,8 +14,8 @@ function ViewWeatherLeft({ updateCity, weathers, active, toggle, setToggle }) {
           <h1>{updateCity}</h1>
         </div>
         <div>
-          <Switch defaultChecked onClick={() => setToggle(!toggle)} />
-          <span>{toggle ? "°F" : "°C"}</span>
+          <Switch onClick={() => setToggle(!toggle)} />
+          <span>{toggle ? "°C" : "°F"}</span>
         </div>
       </div>
       <div>
@@ -34,10 +34,10 @@ function ViewWeatherLeft({ updateCity, weathers, active, toggle, setToggle }) {
         <h2>
           <b>
             {toggle
-              ? weathers && Math.round(weathers[active].main.temp * 1.8) + 32
-              : weathers && Math.round(weathers[active].main.temp)}
+              ? weathers && Math.round(weathers[active].main.temp)
+              : weathers && Math.round(weathers[active].main.temp * 1.8) + 32}
           </b>
-          <span>{toggle ? "°F" : "°C"}</span>
+          <span>{toggle ? "°C" : "°F"}</span>
         </h2>
       </div>
       <div>
