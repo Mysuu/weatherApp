@@ -2,7 +2,7 @@ import React from "react";
 import { WiCloud, WiHumidity, WiRaindrop, WiHot } from "react-icons/wi";
 import { FaWind } from "react-icons/fa";
 import { AiOutlineUp } from "react-icons/ai";
-import "./ViewDetailsExtend.scss";
+import "./styles/ViewDetailsExtend.scss";
 
 function ViewDetailsExtend({ item, setIsDetail, now, today }) {
   return (

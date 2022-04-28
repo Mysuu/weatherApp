@@ -1,8 +1,25 @@
 import React from "react";
-import { Bar } from "react-chartjs-2";
+
 import moment from "moment";
-import { Chart as ChartJS, registerables } from "chart.js";
-ChartJS.register(...registerables);
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 function VerticalBarChart({ weathers }) {
   const options = {

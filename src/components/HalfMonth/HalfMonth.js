@@ -6,7 +6,7 @@ import Clock from "react-live-clock";
 import { week, toDay, empty } from "../../utils/constant";
 import SearchCity from "../Today/SearchCity";
 import Nav from "../Nav/Nav";
-import "./HalfMonth.scss";
+import "./styles/HalfMonth.scss";
 import ListHalfMonth from "./ListHalfMonth";
 import DetailHalfMonth from "./DetailHalfMonth";
 
