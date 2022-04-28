@@ -3,7 +3,7 @@ import { WiCloud, WiHumidity, WiRaindrop, WiHot } from "react-icons/wi";
 import { FaWind } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import moment from "moment";
-import "./DetailHalfMonth.scss";
+import "./styles/DetailHalfMonth.scss";
 
 function DetailHalfMonth({ item, active, setIndexDay }) {
   const now = moment(new Date()).format("MMM D");

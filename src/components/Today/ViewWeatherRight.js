@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { CloseOutlined } from "@ant-design/icons";
 import moment from "moment";
 import "../../styles/ViewWeatherRight.scss";
 import LineChart from "./LineChart";
 
-function ViewWeather({ weathers, active, setActive, toggle }) {
+function ViewWeatherRight({ weathers, active, setActive, toggle }) {
+  const [showTemp, setShowTemp] = useState([]);
   return (
     <div className="views-right">
       <CloseOutlined style={{ color: "#1890ff" }} />
       <div className="views-right-top">
         <h3>&nbsp;</h3>
-        <LineChart weathers={weathers} active={active} toggle={toggle} />
+        <LineChart
+          weathers={weathers}
+          active={active}
+          toggle={toggle}
+          showTemp={showTemp}
+          setShowTemp={setShowTemp}
+        />
       </div>
       <div className="views-right-bottom">
         {weathers &&
@@ -40,4 +47,4 @@ function ViewWeather({ weathers, active, setActive, toggle }) {
   );
 }
 
-export default ViewWeather;
+export default ViewWeatherRight;

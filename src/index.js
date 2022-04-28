@@ -4,16 +4,7 @@ import "./index.scss";
 import "antd/dist/antd.min.css";
 import App from "./App";
 import { Provider } from "react-redux";
-import { combineReducers, createStore, applyMiddleware } from "redux";
-import createSagaMiddleware from "@redux-saga/core";
-import myFirstReducer from "./redux/reducer";
-import mySaga from "./redux/sagas";
-
-const sagaMiddleware = createSagaMiddleware();
-
-const rootReducer = combineReducers({ myFirstReducer });
-const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
-sagaMiddleware.run(mySaga);
+import store from "./redux/store";
 
 ReactDOM.render(
   <React.StrictMode>

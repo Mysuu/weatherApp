@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 import { AiOutlineDown } from "react-icons/ai";
-import "./ViewDetails.scss";
+import "./styles/ViewDetails.scss";
 import ViewDetailsExtend from "./ViewDetailsExtend";
 
 function ViewDetails({ item, index }) {

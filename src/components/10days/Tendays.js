@@ -5,7 +5,7 @@ import { getWeatherTenDays } from "../../redux/actions";
 import Clock from "react-live-clock";
 import SearchCity from "../Today/SearchCity";
 import Nav from "../Nav/Nav";
-import "./Tendays.scss";
+import "./styles/Tendays.scss";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import ViewDetails from "./ViewDetails";
 import BarChart from "./BarChart";

@@ -1,10 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Line } from "react-chartjs-2";
-import { Chart as ChartJS, registerables } from "chart.js";
-ChartJS.register(...registerables);
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler,
+} from "chart.js";
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler
+);
 
-function LineChart({ weathers, active, toggle }) {
-  const [showTemp, setShowTemp] = useState([]);
+function LineChart({ weathers, active, toggle, showTemp, setShowTemp }) {
   useEffect(() => {
     const fullTemp =
       weathers &&
@@ -14,7 +32,7 @@ function LineChart({ weathers, active, toggle }) {
           : Math.round(data.main.temp * 1.8 + 32)
       );
     setShowTemp(fullTemp);
-  }, [weathers, toggle]);
+  }, [weathers, toggle, setShowTemp]);
 
   function alternatePointRadius(ctx, nbr) {
     const index = ctx.dataIndex;
