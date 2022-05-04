@@ -12,7 +12,10 @@ describe("linechart", () => {
             main: { temp: "20" },
           },
         ]}
+        data={{ temp: "20" }}
         toggle={false}
+        showTemp={"27"}
+        setShowTemp={setShowTemp}
       />
     );
   });

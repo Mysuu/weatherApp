@@ -10,6 +10,13 @@ describe("VerticalBarChart", () => {
           { main: { temp: "29", humidity: "70" } },
           { wind: { speed: "5" } },
         ]}
+        weathers={[
+          {
+            dt_txt: "2022-28-04",
+            main: { temp: "29", humidity: "70" },
+            wind: { speed: "5" },
+          },
+        ]}
       />
     );
   });

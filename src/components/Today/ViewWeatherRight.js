@@ -6,6 +6,7 @@ import LineChart from "./LineChart";
 
 function ViewWeatherRight({ weathers, active, setActive, toggle }) {
   const [showTemp, setShowTemp] = useState([]);
+  console.log(weathers);
   return (
     <div className="views-right">
       <CloseOutlined style={{ color: "#1890ff" }} />
@@ -22,6 +23,7 @@ function ViewWeatherRight({ weathers, active, setActive, toggle }) {
       <div className="views-right-bottom">
         {weathers &&
           weathers.map((item, index) => {
+            const icon = item.weather[0]?.icon;
             return (
               <div
                 key={index}
@@ -32,7 +34,7 @@ function ViewWeatherRight({ weathers, active, setActive, toggle }) {
               >
                 <h3>{moment(item.dt_txt).format("MMM Do YYYY, HH:mm")}</h3>
                 <img
-                  src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
+                  src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
                   alt=""
                 />
                 <div className="humidity2">

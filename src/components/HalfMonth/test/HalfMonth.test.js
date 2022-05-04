@@ -2,16 +2,14 @@ import { render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "../../../redux/store";
-import Tendays from "../Tendays";
+import HalfMonth from "../HalfMonth";
 
-const setChangeBarChart = jest.fn();
-
-describe("tendays", () => {
-  test("should render tendays", () => {
+describe("halfmonth", () => {
+  test("should render halfmonth", () => {
     render(
       <BrowserRouter>
         <Provider store={store}>
-          <Tendays />
+          <HalfMonth />
         </Provider>
       </BrowserRouter>
     );

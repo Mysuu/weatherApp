@@ -6,6 +6,9 @@ describe("barchar", () => {
     render(
       <BarChart
         item={{ datetime: "2022-28-04", temp: "28", rh: "80", wind_spd: "2" }}
+        weathers={[
+          { datetime: "2022-28-04", temp: "28", rh: "80", wind_spd: "2" },
+        ]}
       />
     );
   });
